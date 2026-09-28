@@ -2375,3 +2375,13 @@ button {
         grid-template-columns: 1fr;
     }
 }
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+.topology-svg {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+}
