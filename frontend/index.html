@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Network Topology Failure Detection & Health Monitoring</title>
+
+    <meta name="description"
+        content="Java-based Network Topology Failure Detection and Health Monitoring System using dataset-driven failure analysis, device health scoring and logical topology visualization.">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- =========================================================
+     NAVIGATION
+========================================================= -->
+
+    <nav class="navbar">
+        <div class="nav-container">
+
+            <div class="brand">
+                <div class="brand-mark">N</div>
+
+                <div>
+                    <strong>NetGuard</strong>
+                    <span>Network Intelligence</span>
+                </div>
+            </div>
+
+            <div class="nav-links">
+                <a href="#overview">Overview</a>
+                <a href="#analytics">Analytics</a>
+                <a href="#topology">Topology</a>
+                <a href="#devices">Devices</a>
+                <a href="#architecture">Architecture</a>
+            </div>
+
+            <a href="#dashboard" class="nav-button">
+                Explore System
+            </a>
+
+        </div>
+    </nav>
+
+
+    <!-- =========================================================
+     HERO
+========================================================= -->
+
+    <section class="hero">
+
+        <div class="hero-grid"></div>
+
+        <div class="hero-container">
+
+            <div class="hero-content">
+
+                <div class="status-pill">
+                    <span class="status-dot"></span>
+                    Dataset Analysis System
+                </div>
+
+                <h1>
+                    Network Failure Detection
+                    <span>Made Intelligent.</span>
+                </h1>
+
+                <p class="hero-description">
+                    A Java-based network health monitoring system that analyzes
+                    device telemetry, identifies failure conditions, calculates
+                    device health scores and visualizes logical network topology.
+                </p>
+
+                <div class="hero-actions">
+
+                    <a href="#dashboard" class="primary-button">
+                        Explore Dashboard
+                        <span>→</span>
+                    </a>
+
+                    <a href="#how-it-works" class="secondary-button">
+                        How It Works
+                    </a>
+
+                </div>
+
+                <div class="hero-mini-stats">
+
+                    <div>
+                        <strong id="heroDevices">3000+</strong>
+                        <span>Devices Analyzed</span>
+                    </div>
+
+                    <div>
+                        <strong id="heroFailures">1190+</strong>
+                        <span>Failures Detected</span>
+                    </div>
+
+                    <div>
+                        <strong>4</strong>
+                        <span>Failure Types</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Hero visualization -->
+
+            <div class="hero-visual">
+
+                <div class="network-card">
+
+                    <div class="network-card-header">
+                        <div>
+                            <span>Network Health</span>
+                            <strong id="heroHealth">60.3%</strong>
+                        </div>
+
+                        <div class="live-badge">
+                            ANALYSIS
+                        </div>
+                    </div>
+
+                    <div class="hero-network">
+
+                        <div class="hero-line line-1"></div>
+                        <div class="hero-line line-2"></div>
+                        <div class="hero-line line-3"></div>
+                        <div class="hero-line line-4"></div>
+
+                        <div class="network-node node-main">
+                            <span>CORE</span>
+                        </div>
+
+                        <div class="network-node node-1">
+                            <span>01</span>
+                        </div>
+
+                        <div class="network-node node-2 failed">
+                            <span>02</span>
+                        </div>
+
+                        <div class="network-node node-3">
+                            <span>03</span>
+                        </div>
+
+                        <div class="network-node node-4">
+                            <span>04</span>
+                        </div>
+
+                        <div class="network-node node-5 failed">
+                            <span>05</span>
+                        </div>
+
+                    </div>
+
+                    <div class="network-card-footer">
+
+                        <div>
+                            <span class="legend-dot normal"></span>
+                            Normal
+                        </div>
+
+                        <div>
+                            <span class="legend-dot failed"></span>
+                            Failure Detected
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+     PROBLEM
+========================================================= -->
+
+    <section class="section problem-section">
+
+        <div class="section-container">
+
+            <div class="section-heading centered">
+
+                <span class="eyebrow">THE PROBLEM</span>
+
+                <h2>
+                    Network failures don't always
+                    <span>announce themselves.</span>
+                </h2>
+
+                <p>
+                    A network device can gradually move toward an unhealthy
+                    state because of CPU overload, memory pressure, battery
+                    degradation, latency, packet loss or excessive temperature.
+                </p>
+
+            </div>
+
+
+            <div class="problem-grid">
+
+                <div class="problem-card">
+                    <div class="problem-icon">01</div>
+
+                    <h3>Hidden Device Failures</h3>
+
+                    <p>
+                        Operational problems may remain unnoticed until
+                        they significantly affect device performance.
+                    </p>
+                </div>
+
+
+                <div class="problem-card">
+                    <div class="problem-icon">02</div>
+
+                    <h3>Multiple Failure Causes</h3>
+
+                    <p>
+                        Different device parameters can indicate different
+                        failure conditions such as CPU, battery or network failure.
+                    </p>
+                </div>
+
+
+                <div class="problem-card">
+                    <div class="problem-icon">03</div>
+
+                    <h3>Complex Network Data</h3>
+
+                    <p>
+                        Thousands of device records are difficult to inspect
+                        manually without structured analysis and visualization.
+                    </p>
+                </div>
+
+
+                <div class="problem-card">
+                    <div class="problem-icon">04</div>
+
+                    <h3>Topology Visibility</h3>
+
+                    <p>
+                        Understanding which devices are healthy or affected
+                        becomes easier when device information is visualized.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+     SYSTEM OVERVIEW
+========================================================= -->
+
+    <section class="section overview-section" id="overview">
+
+        <div class="section-container">
+
+            <div class="section-heading">
+
+                <span class="eyebrow">SYSTEM OVERVIEW</span>
+
+                <h2>
+                    From raw telemetry
+                    <span>to actionable insight.</span>
+                </h2>
+
+                <p>
+                    The system transforms structured network device data
+                    into failure information, health metrics and visual
+                    network insights.
+                </p>
+
+            </div>
+
+
+            <div class="pipeline">
+
+                <div class="pipeline-step">
+                    <div class="pipeline-number">01</div>
+                    <h3>Dataset</h3>
+                    <p>Network device telemetry stored in CSV format.</p>
+                </div>
+
+                <div class="pipeline-arrow">→</div>
+
+                <div class="pipeline-step">
+                    <div class="pipeline-number">02</div>
+                    <h3>Java Processing</h3>
+                    <p>CSV records converted into Java objects.</p>
+                </div>
+
+                <div class="pipeline-arrow">→</div>
+
+                <div class="pipeline-step">
+                    <div class="pipeline-number">03</div>
+                    <h3>Fault Detection</h3>
+                    <p>Failure types identified from dataset records.</p>
+                </div>
+
+                <div class="pipeline-arrow">→</div>
+
+                <div class="pipeline-step">
+                    <div class="pipeline-number">04</div>
+                    <h3>Health Analysis</h3>
+                    <p>Device health scores calculated from parameters.</p>
+                </div>
+
+                <div class="pipeline-arrow">→</div>
+
+                <div class="pipeline-step">
+                    <div class="pipeline-number">05</div>
+                    <h3>Visualization</h3>
+                    <p>Results exposed through APIs and dashboard.</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+     DASHBOARD
+========================================================= -->
+
+    <section class="section dashboard-section" id="dashboard">
+
+        <div class="section-container">
+
+            <div class="section-heading">
+
+                <span class="eyebrow">SYSTEM DASHBOARD</span>
+
+                <h2>
+                    Network intelligence
+                    <span>at a glance.</span>
+                </h2>
+
+                <p>
+                    Explore the analyzed dataset and understand the
+                    current distribution of device health and failures.
+                </p>
+
+            </div>
+
+
+            <!-- Statistics -->
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+                    <div class="stat-label">TOTAL DEVICES</div>
+                    <div class="stat-value" id="totalDevices">0</div>
+                    <div class="stat-description">
+                        Records analyzed
+                    </div>
+                </div>
+
+
+                <div class="stat-card">
+                    <div class="stat-label">NORMAL DEVICES</div>
+                    <div class="stat-value" id="normalDevices">0</div>
+                    <div class="stat-description">
+                        Healthy dataset records
+                    </div>
+                </div>
+
+
+                <div class="stat-card danger-card">
+                    <div class="stat-label">FAILED DEVICES</div>
+                    <div class="stat-value" id="failedDevices">0</div>
+                    <div class="stat-description">
+                        Failure conditions detected
+                    </div>
+                </div>
+
+
+                <div class="stat-card">
+                    <div class="stat-label">HEALTH RATE</div>
+                    <div class="stat-value">
+                        <span id="healthRate">0</span>%
+                    </div>
+                    <div class="stat-description">
+                        Normal device percentage
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- Analytics -->
+
+            <div class="analytics-grid" id="analytics">
+
+                <div class="analytics-card">
+
+                    <div class="card-heading">
+                        <div>
+                            <span>FAILURE DISTRIBUTION</span>
+                            <h3>Detected Failure Types</h3>
+                        </div>
+                    </div>
+
+                    <div id="failureDistribution" class="bar-chart"></div>
+
+                </div>
+
+
+                <div class="analytics-card">
+
+                    <div class="card-heading">
+                        <div>
+                            <span>FAILURE SUMMARY</span>
+                            <h3>System Risk Overview</h3>
+                        </div>
+                    </div>
+
+                    <div class="summary-list">
+
+                        <div class="summary-item">
+                            <div class="summary-info">
+                                <span>Normal</span>
+                                <strong id="summaryNormal">0</strong>
+                            </div>
+
+                            <div class="summary-track">
+                                <div id="summaryNormalBar" class="summary-progress normal-progress">
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="summary-item">
+                            <div class="summary-info">
+                                <span>CPU Failure</span>
+                                <strong id="summaryCPU">0</strong>
+                            </div>
+
+                            <div class="summary-track">
+                                <div id="summaryCPUBar" class="summary-progress cpu-progress">
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="summary-item">
+                            <div class="summary-info">
+                                <span>Network Failure</span>
+                                <strong id="summaryNetwork">0</strong>
+                            </div>
+
+                            <div class="summary-track">
+                                <div id="summaryNetworkBar" class="summary-progress network-progress">
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="summary-item">
+                            <div class="summary-info">
+                                <span>Battery Failure</span>
+                                <strong id="summaryBattery">0</strong>
+                            </div>
+
+                            <div class="summary-track">
+                                <div id="summaryBatteryBar" class="summary-progress battery-progress">
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="summary-item">
+                            <div class="summary-info">
+                                <span>Overheat Failure</span>
+                                <strong id="summaryOverheat">0</strong>
+                            </div>
+
+                            <div class="summary-track">
+                                <div id="summaryOverheatBar" class="summary-progress overheat-progress">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+     TOPOLOGY
+========================================================= -->
+
+    <section class="section topology-section" id="topology">
+
+        <div class="section-container">
+
+            <div class="section-heading">
+
+                <span class="eyebrow">NETWORK TOPOLOGY</span>
+
+                <h2>
+                    Visualize the
+                    <span>network structure.</span>
+                </h2>
+
+                <p>
+                    Explore a logical representation of connected network
+                    devices. Normal and failed devices are visually distinguished.
+                </p>
+
+            </div>
+
+
+            <div class="topology-layout">
+
+                <div class="topology-panel">
+
+                    <div class="topology-header">
+
+                        <div>
+                            <span>LOGICAL TOPOLOGY</span>
+                            <h3>Device Connectivity Map</h3>
+                        </div>
+
+                        <div class="topology-legend">
+
+                            <span>
+                                <i class="legend-circle normal"></i>
+                                Normal
+                            </span>
+
+                            <span>
+                                <i class="legend-circle failed"></i>
+                                Failed
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div id="topologyContainer" class="topology-container">
+
+                        <div class="topology-loading">
+                            Loading topology...
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div id="topologyDetails" class="topology-details">
+
+                    <div class="details-placeholder">
+
+                        <div class="placeholder-icon">⌁</div>
+
+                        <h3>Select a Device</h3>
+
+                        <p>
+                            Click any device in the topology to inspect
+                            its detected status and failure information.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+     HEALTH MONITORING
+========================================================= -->
+
+    <section class="section health-section">
+
+        <div class="section-container">
+
+            <div class="health-header">
+
+                <div class="section-heading">
+
+                    <span class="eyebrow">DEVICE HEALTH</span>
+
+                    <h2>
+                        Understand device
+                        <span>health beyond status.</span>
+                    </h2>
+
+                    <p>
+                        Health scores combine multiple operational parameters
+                        to provide a simple rule-based health indicator.
+                    </p>
+
+                </div>
+
+
+                <div class="health-score-card">
+
+                    <span>OVERALL DATASET HEALTH</span>
+
+                    <strong id="overallHealthScore">
+                        0%
+                    </strong>
+
+                    <div class="health-track">
+                        <div id="overallHealthBar" class="health-progress">
+                        </div>
+                    </div>
+
+                    <small>
+                        Based on analyzed device records
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="health-features">
+
+                <div class="health-feature">
+                    <span>CPU</span>
+                    <p>
+                        Processor utilization can indicate
+                        computational overload.
+                    </p>
+                </div>
+
+                <div class="health-feature">
+                    <span>MEMORY</span>
+                    <p>
+                        Memory usage helps identify
+                        resource pressure.
+                    </p>
+                </div>
+
+                <div class="health-feature">
+                    <span>BATTERY</span>
+                    <p>
+                        Battery level is used to identify
+                        battery-related failures.
+                    </p>
+                </div>
+
+                <div class="health-feature">
+                    <span>NETWORK</span>
+                    <p>
+                        Latency and packet loss provide
+                        network performance indicators.
+                    </p>
+                </div>
+
+                <div class="health-feature">
+                    <span>TEMPERATURE</span>
+                    <p>
+                        High device temperature can indicate
+                        overheat conditions.
+                    </p>
+                </div>
+
+                <div class="health-feature">
+                    <span>ERRORS</span>
+                    <p>
+                        Error count provides an additional
+                        reliability indicator.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+     DEVICE EXPLORER
+========================================================= -->
+
+    <section class="section devices-section" id="devices">
+
+        <div class="section-container">
+
+            <div class="section-heading">
+
+                <span class="eyebrow">DEVICE EXPLORER</span>
+
+                <h2>
+                    Inspect individual
+                    <span>network devices.</span>
+                </h2>
+
+                <p>
+                    Search and filter analyzed devices to inspect their
+                    detected status and failure conditions.
+                </p>
+
+            </div>
+
+
+            <div class="device-toolbar">
+
+                <div class="search-box">
+
+                    <span>⌕</span>
+
+                    <input type="text" id="deviceSearch" placeholder="Search device ID...">
+
+                </div>
+
+
+                <select id="failureFilter">
+
+                    <option value="all">
+                        All Status
+                    </option>
+
+                    <option value="Normal">
+                        Normal
+                    </option>
+
+                    <option value="CPU Failure">
+                        CPU Failure
+                    </option>
+
+                    <option value="Network Failure">
+                        Network Failure
+                    </option>
+
+                    <option value="Battery Failure">
+                        Battery Failure
+                    </option>
+
+                    <option value="Overheat Failure">
+                        Overheat Failure
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="table-wrapper">
+
+                <table class="device-table">
+
+                    <thead>
+
+                        <tr>
+                            <th>DEVICE ID</th>
+                            <th>STATUS</th>
+                            <th>FAILURE TYPE</th>
+                            <th>SEVERITY</th>
+                            <th>ACTION</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="deviceTableBody"></tbody>
+
+                </table>
+
+            </div>
+
+
+            <div id="pagination" class="pagination">
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+     HOW IT WORKS
+========================================================= -->
+
+    <section class="section how-section" id="how-it-works">
+
+        <div class="section-container">
+
+            <div class="section-heading centered">
+
+                <span class="eyebrow">HOW IT WORKS</span>
+
+                <h2>
+                    Five stages from
+                    <span>data to insight.</span>
+                </h2>
+
+            </div>
+
+
+            <div class="how-grid">
+
+                <div class="how-card">
+                    <div class="how-number">01</div>
+                    <h3>Collect</h3>
+                    <p>
+                        The system reads structured network
+                        device records from the dataset.
+                    </p>
+                </div>
+
+
+                <div class="how-card">
+                    <div class="how-number">02</div>
+                    <h3>Parse</h3>
+                    <p>
+                        CSV records are parsed and represented
+                        using Java model objects.
+                    </p>
+                </div>
+
+
+                <div class="how-card">
+                    <div class="how-number">03</div>
+                    <h3>Detect</h3>
+                    <p>
+                        Failure types are identified based on
+                        the failure information in the dataset.
+                    </p>
+                </div>
+
+
+                <div class="how-card">
+                    <div class="how-number">04</div>
+                    <h3>Analyze</h3>
+                    <p>
+                        Device parameters are evaluated to
+                        calculate rule-based health scores.
+                    </p>
+                </div>
+
+
+                <div class="how-card">
+                    <div class="how-number">05</div>
+                    <h3>Visualize</h3>
+                    <p>
+                        Processed information is delivered
+                        through APIs and presented visually.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+     OOP ARCHITECTURE
+========================================================= -->
+
+    <section class="section architecture-section" id="architecture">
+
+        <div class="section-container">
+
+            <div class="section-heading">
+
+                <span class="eyebrow">JAVA OOP ARCHITECTURE</span>
+
+                <h2>
+                    Built around
+                    <span>object-oriented design.</span>
+                </h2>
+
+                <p>
+                    The backend separates data models, services and utility
+                    components to keep the system modular and understandable.
+                </p>
+
+            </div>
+
+
+            <div class="architecture-layout">
+
+                <div class="architecture-flow">
+
+                    <div class="arch-box">
+                        <strong>NetworkDevice</strong>
+                        <span>Model</span>
+                        <small>Represents device data</small>
+                    </div>
+
+                    <div class="arch-arrow">↓</div>
+
+                    <div class="arch-box">
+                        <strong>DatasetReader</strong>
+                        <span>Service</span>
+                        <small>Reads CSV records</small>
+                    </div>
+
+                    <div class="arch-arrow">↓</div>
+
+                    <div class="arch-box">
+                        <strong>FaultDetectionService</strong>
+                        <span>Service</span>
+                        <small>Identifies failure types</small>
+                    </div>
+
+                    <div class="arch-arrow">↓</div>
+
+                    <div class="arch-box">
+                        <strong>HealthScoreService</strong>
+                        <span>Service</span>
+                        <small>Calculates health score</small>
+                    </div>
+
+                </div>
+
+
+                <div class="oop-cards">
+
+                    <div class="oop-card">
+                        <span>ENCAPSULATION</span>
+                        <h3>Private Data Members</h3>
+                        <p>
+                            Device attributes are kept private and
+                            accessed through methods.
+                        </p>
+                    </div>
+
+                    <div class="oop-card">
+                        <span>ABSTRACTION</span>
+                        <h3>Service Separation</h3>
+                        <p>
+                            Dataset reading, fault detection and health
+                            analysis are handled independently.
+                        </p>
+                    </div>
+
+                    <div class="oop-card">
+                        <span>MODULARITY</span>
+                        <h3>Reusable Components</h3>
+                        <p>
+                            Each component performs a focused task,
+                            making the system easier to maintain.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+     TECHNOLOGIES
+========================================================= -->
+
+    <section class="section technology-section">
+
+        <div class="section-container">
+
+            <div class="section-heading centered">
+
+                <span class="eyebrow">TECHNOLOGY STACK</span>
+
+                <h2>
+                    Simple technologies,
+                    <span>structured architecture.</span>
+                </h2>
+
+            </div>
+
+
+            <div class="technology-grid">
+
+                <div class="technology-card">
+                    <strong>Java</strong>
+                    <span>Core Backend</span>
+                </div>
+
+                <div class="technology-card">
+                    <strong>OOP</strong>
+                    <span>System Architecture</span>
+                </div>
+
+                <div class="technology-card">
+                    <strong>CSV</strong>
+                    <span>Dataset Processing</span>
+                </div>
+
+                <div class="technology-card">
+                    <strong>REST API</strong>
+                    <span>Backend Communication</span>
+                </div>
+
+                <div class="technology-card">
+                    <strong>HTML</strong>
+                    <span>Frontend Structure</span>
+                </div>
+
+                <div class="technology-card">
+                    <strong>CSS</strong>
+                    <span>Interface Design</span>
+                </div>
+
+                <div class="technology-card">
+                    <strong>JavaScript</strong>
+                    <span>Dashboard Logic</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+     LIMITATIONS / FUTURE
+========================================================= -->
+
+    <section class="section future-section">
+
+        <div class="section-container">
+
+            <div class="future-grid">
+
+                <div>
+
+                    <span class="eyebrow">
+                        CURRENT SCOPE
+                    </span>
+
+                    <h2>
+                        Designed for
+                        <span>structured analysis.</span>
+                    </h2>
+
+                    <p>
+                        The current implementation analyzes a prepared
+                        network device dataset and provides logical topology
+                        visualization. The topology represents a logical
+                        relationship because the dataset does not contain
+                        physical device connectivity information.
+                    </p>
+
+                </div>
+
+
+                <div>
+
+                    <span class="eyebrow">
+                        FUTURE SCOPE
+                    </span>
+
+                    <div class="future-list">
+
+                        <div>
+                            <strong>01</strong>
+                            <span>Real-time network monitoring</span>
+                        </div>
+
+                        <div>
+                            <strong>02</strong>
+                            <span>Actual topology discovery</span>
+                        </div>
+
+                        <div>
+                            <strong>03</strong>
+                            <span>Machine-learning failure prediction</span>
+                        </div>
+
+                        <div>
+                            <strong>04</strong>
+                            <span>Automated failure alerts</span>
+                        </div>
+
+                        <div>
+                            <strong>05</strong>
+                            <span>Historical performance analytics</span>
+                        </div>
+
+                        <div>
+                            <strong>06</strong>
+                            <span>Automated remediation recommendations</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+     FOOTER
+========================================================= -->
+
+    <footer class="footer">
+
+        <div class="footer-container">
+
+            <div class="footer-brand">
+
+                <div class="brand">
+                    <div class="brand-mark">N</div>
+
+                    <div>
+                        <strong>NetGuard</strong>
+                        <span>Network Intelligence</span>
+                    </div>
+                </div>
+
+                <p>
+                    Network Topology Failure Detection and
+                    Health Monitoring System.
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>System</h4>
+
+                <a href="#overview">Overview</a>
+                <a href="#analytics">Analytics</a>
+                <a href="#topology">Topology</a>
+                <a href="#devices">Devices</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>Technology</h4>
+
+                <span>Java OOP</span>
+                <span>REST API</span>
+                <span>HTML / CSS</span>
+                <span>JavaScript</span>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>Project</h4>
+
+                <span>Academic Project</span>
+                <span>Dataset-Based Analysis</span>
+                <span>Health Monitoring</span>
+                <span>Failure Detection</span>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <span>
+                Network Topology Failure Detection System
+            </span>
+
+            <span>
+                Built with Java OOP
+            </span>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================================================
+     DEVICE MODAL
+========================================================= -->
+
+    <div id="deviceModal" class="modal">
+
+        <div class="modal-content">
+
+            <button class="modal-close" onclick="closeDeviceModal()">
+                ×
+            </button>
+
+            <div class="modal-header">
+
+                <span>DEVICE DETAILS</span>
+
+                <h2 id="modalDeviceId">
+                    Device
+                </h2>
+
+            </div>
+
+            <div id="modalDeviceContent" class="modal-body">
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>
